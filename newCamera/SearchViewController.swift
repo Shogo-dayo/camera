@@ -38,14 +38,14 @@ class SearchViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         super.viewDidLoad()
         self.searchView.text = self.searchString.description
         //文字数カウント
-        print(searchString.count)
+        //print(searchString.count)
         getApiRequest()
         }
 
     func getApiRequest(){
         
         //POSTで送信したい情報をセット
-        let searchData2 = searchData(app_id: "52170588dc2c63830b30591fdd321749c22c768f0f09428d12c3562573bcf4d9", title: "aaaa", body: searchString)
+        //let searchData2 = searchData(app_id: "52170588dc2c63830b30591fdd321749c22c768f0f09428d12c3562573bcf4d9", title: "aaaa", body: searchString)
         
         let gooUrl = "https://labs.goo.ne.jp/api/keyword"
         let headers: HTTPHeaders = ["Contenttype": "application/json"]
@@ -76,16 +76,24 @@ class SearchViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                     }
                 }
                 
-                
+                //5つの単語が返ってくる
                 print(item2)
+                //配列の1番目が抽出
                 print(item2[0])
                 
+                
                 let item3 = item2[0]
+                let item4 = item2[1]
+                let item5 = item2[2]
+                let item6 = item2[3]
+                let item7 = item2[4]
+                
+                print(item3)
                 
                 
                 
                 var scholarURL : URL{
-                    return URL(string: "https://scholar.google.co.jp/scholar?hl=ja&as_sdt=0%2C5&q=\(item3)&btnG=")!
+                    return URL(string: "https://scholar.google.co.jp/scholar?hl=ja&as_sdt=0%2C5&q=\(item3)+\(item4)+\(item5)+\(item6)+\(item7)&btnG=")!
                 }
                 
                 if UIApplication.shared.canOpenURL(scholarURL){

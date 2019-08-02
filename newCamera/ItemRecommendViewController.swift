@@ -40,10 +40,9 @@ class ItemRecommendViewController: UIViewController,UIImagePickerControllerDeleg
         return URL(string: "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?format=json&applicationId=\(rakutenAPI_KEY)&keyword=\(itemString[0])&sort=%2BitemPrice")!
     }
     
-    //楽天市場のネット検索
-    var rakutenURL2: URL{
-        return URL(string: "https://search.rakuten.co.jp/search/mall/\(itemString[0])/")!
-    }
+   
+    
+    
     
     //価格.com のネット検索
     
@@ -54,11 +53,12 @@ class ItemRecommendViewController: UIViewController,UIImagePickerControllerDeleg
         print(itemString[0],itemString[1],itemString[2],itemString[3],itemString[4])
         self.itemRecommendView.text = self.itemString[0]
         
-        let testString = itemString
+        let testString0 = itemString[0]
+        let testString1 = itemString[1]
+        let testString2 = itemString[2]
+        let testString3 = itemString[3]
+        let testString4 = itemString[4]
         
-        //testString String型
-        print(type(of: testString))
-        print("2")
         
         let encodedString = (itemString[0]+itemString[1]+itemString[2]).urlEncoding
         print(encodedString)
@@ -66,6 +66,12 @@ class ItemRecommendViewController: UIViewController,UIImagePickerControllerDeleg
         var kakakuURL : URL{
             return URL(string: "https://kakaku.com/search_results/\(encodedString)")!
         }
+        
+        //楽天市場のネット検索
+        var rakutenURL2: URL{
+            return URL(string: "https://search.rakuten.co.jp/search/mall/\(testString1)/")!
+        }
+        
         
         if UIApplication.shared.canOpenURL(rakutenURL2){
             UIApplication.shared.openURL(rakutenURL2)
