@@ -22,6 +22,7 @@
 		CCC1DBB522CE0FB8000F9DD2 /* UsePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1DBB422CE0FB8000F9DD2 /* UsePictureViewController.swift */; };
 		CCD3FA1722F135C300C7EE36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3FA1622F135C300C7EE36 /* SearchViewController.swift */; };
 		CCD3FA8D22F3DD0500C7EE36 /* searchGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */; };
+		CCD3FA8F22F4147700C7EE36 /* ItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3FA8E22F4147700C7EE36 /* ItemTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		CCC1DBB422CE0FB8000F9DD2 /* UsePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsePictureViewController.swift; sourceTree = "<group>"; };
 		CCD3FA1622F135C300C7EE36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchGoogle.swift; sourceTree = "<group>"; };
+		CCD3FA8E22F4147700C7EE36 /* ItemTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				CC11C3EB22EEFDD100C13F5C /* TextRecommendViewController.swift */,
 				CCD3FA1622F135C300C7EE36 /* SearchViewController.swift */,
 				CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */,
+				CCD3FA8E22F4147700C7EE36 /* ItemTableView.swift */,
 				CCC1DB8A22CE021C000F9DD2 /* Main.storyboard */,
 				CCC1DB8D22CE021D000F9DD2 /* Assets.xcassets */,
 				CCC1DB8F22CE021D000F9DD2 /* LaunchScreen.storyboard */,
@@ -445,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD3FA8F22F4147700C7EE36 /* ItemTableView.swift in Sources */,
 				CCD3FA1722F135C300C7EE36 /* SearchViewController.swift in Sources */,
 				CC11C3EA22EEFDB500C13F5C /* ItemRecommendViewController.swift in Sources */,
 				CC11C3E222EEE77200C13F5C /* ViewController.swift in Sources */,

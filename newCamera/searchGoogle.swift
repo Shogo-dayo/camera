@@ -15,13 +15,19 @@ import WebKit
 
 class searchGoogle: UIViewController,WKUIDelegate,UINavigationControllerDelegate {
     
+    var myLeftButton : UIBarButtonItem!
+    var webView : WKWebView!
     
-    @IBOutlet weak var webView: WKWebView!
+    //google.comのネット検索
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        weburl()
+        
+    }
     
-    @IBOutlet weak var toolbar: UIToolbar!
     func weburl() {
         
-        webView = WKWebView(frame: CGRect(x:0 , y:0 , width: self.view.bounds.size.width , height: self.view.bounds.size.height))
+        webView = WKWebView(frame: CGRect(x:0 , y:0 , width: self.view.bounds.size.width , height: self.view.bounds.size.height-50))
         
         let uslString = "https://www.google.com/"
         let encodedUrlString = uslString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
@@ -46,29 +52,49 @@ class searchGoogle: UIViewController,WKUIDelegate,UINavigationControllerDelegate
         toolbar.tintColor = UIColor.blue
         
         let screenShot = UIButton(frame: CGRect(x:0 , y:0 , width: 50 , height: 24))
-        screenShot.setBackgroundImage(UIImage(named: "screen"), for: .normal)
+        //screenShot.setBackgroundImage(UIImage(named: "screen"), for: .normal)
         screenShot.addTarget(self, action: #selector(self.getScreenShot(_ :)), for: .touchUpInside)
-        let screen = UIBarButtonItem()
+        let screen = UIBarButtonItem(customView: screenShot)
         
         
         toolbar.items = [screen]
         self.view.addSubview(toolbar)
-            
+        
+        
+        myLeftButton = UIBarButtonItem(barButtonSystemItem:  .search, target: self, action: "getScreenShot:")
+        
+        toolbar.items?.append(myLeftButton)
         
     }
     
-    @objc func getScreenShot(_ sender:UIBarButtonItem){
-        self.webView.goBack()
+    @objc func getScreenShot(_ sender:UIBarButtonItem) {
+        
+        let rect = view.bounds
+        
+        UIGraphicsBeginImageContextWithOptions(rect.size, false , 0.0)
+        
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        
+        self.view.layer.render(in: context)
+        
+        let screenShot: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        print(screenShot)
+        
+        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(screenShot, nil, nil, nil)
+        
+        //遷移先のViewControllerを取得
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //親クラスと子供クラスのインスタンスを取得
+        let screenImage = storyboard.instantiateViewController(withIdentifier: "UsePic") as! UsePictureViewController
+        
+        screenImage.image = screenShot
+        
+        screenImage.modalTransitionStyle = UIModalTransitionStyle.partialCurl
+        
+        self.navigationController?.pushViewController(screenImage, animated: true)
     }
     
-    
-    //google.comのネット検索
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        weburl()
-        
-        
-    }
 }
 
 
