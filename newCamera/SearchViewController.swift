@@ -86,14 +86,14 @@ class SearchViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                 let item4 = item2[1]
                 let item5 = item2[2]
                 let item6 = item2[3]
-                let item7 = item2[4]
+                
                 
                 print(item3)
                 
                 
                 
                 var scholarURL : URL{
-                    return URL(string: "https://scholar.google.co.jp/scholar?hl=ja&as_sdt=0%2C5&q=\(item3)+\(item4)+\(item5)+\(item6)+\(item7)&btnG=")!
+                    return URL(string: "https://scholar.google.co.jp/scholar?hl=ja&as_sdt=0%2C5&q=\(item3)+\(item4)+\(item5)&btnG=")!
                 }
                 
                 if UIApplication.shared.canOpenURL(scholarURL){

@@ -14,6 +14,34 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var screenShot : UIImage?
+    
+    
+    @IBAction func prepareScreen(_ sender: UIBarButtonItem) {
+        
+        
+        let picker = getScrrenShot(windowFrame: self.view.bounds)
+        
+        UIImageWriteToSavedPhotosAlbum(picker, nil, nil, nil)
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            
+            let picker = UIImagePickerController()
+            picker.modalPresentationStyle = UIModalPresentationStyle.popover
+            picker.delegate = self
+            picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            
+            if let popover = picker.popoverPresentationController{
+                popover.sourceView = self.view
+                //popover.sourceRect = loadImageButton.frame
+                popover.permittedArrowDirections = UIPopoverArrowDirection.any
+            }
+            self.present(picker,animated:true)
+        }
+        
+        
+        
+    }
     
     @IBAction func prepareSetting(_ sender: UIBarButtonItem) {
         //カメラロールから写真イメージ取得
@@ -69,6 +97,27 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         usePicture.modalTransitionStyle = UIModalTransitionStyle.partialCurl
         
         self.navigationController?.pushViewController(usePicture, animated: true)
+        
+        
+    }
+    
+    func getScrrenShot(windowFrame: CGRect) -> UIImage {
+       
+        //context処理開始
+        UIGraphicsBeginImageContextWithOptions(windowFrame.size, false, 0.0)
+        
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        
+        //contextにスクリーンショットを書き込む
+        self.view.layer.render(in: context)
+        
+        //contextをUIImageに書き出す
+        let screenShot: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        //context処理を終了
+        UIGraphicsEndImageContext()
+        
+        return screenShot
         
         
     }

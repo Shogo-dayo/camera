@@ -21,6 +21,7 @@
 		CCC1DBA722CE021D000F9DD2 /* newCameraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1DBA622CE021D000F9DD2 /* newCameraUITests.swift */; };
 		CCC1DBB522CE0FB8000F9DD2 /* UsePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1DBB422CE0FB8000F9DD2 /* UsePictureViewController.swift */; };
 		CCD3FA1722F135C300C7EE36 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3FA1622F135C300C7EE36 /* SearchViewController.swift */; };
+		CCD3FA8D22F3DD0500C7EE36 /* searchGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		CCC1DBA822CE021D000F9DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCC1DBB422CE0FB8000F9DD2 /* UsePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsePictureViewController.swift; sourceTree = "<group>"; };
 		CCD3FA1622F135C300C7EE36 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchGoogle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				CC11C3E922EEFDB500C13F5C /* ItemRecommendViewController.swift */,
 				CC11C3EB22EEFDD100C13F5C /* TextRecommendViewController.swift */,
 				CCD3FA1622F135C300C7EE36 /* SearchViewController.swift */,
+				CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */,
 				CCC1DB8A22CE021C000F9DD2 /* Main.storyboard */,
 				CCC1DB8D22CE021D000F9DD2 /* Assets.xcassets */,
 				CCC1DB8F22CE021D000F9DD2 /* LaunchScreen.storyboard */,
@@ -447,6 +450,7 @@
 				CC11C3E222EEE77200C13F5C /* ViewController.swift in Sources */,
 				CCC1DBB522CE0FB8000F9DD2 /* UsePictureViewController.swift in Sources */,
 				CCC1DB8722CE021C000F9DD2 /* AppDelegate.swift in Sources */,
+				CCD3FA8D22F3DD0500C7EE36 /* searchGoogle.swift in Sources */,
 				CC11C3EC22EEFDD100C13F5C /* TextRecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

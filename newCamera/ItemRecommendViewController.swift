@@ -60,7 +60,7 @@ class ItemRecommendViewController: UIViewController,UIImagePickerControllerDeleg
         let testString4 = itemString[4]
         
         
-        let encodedString = (itemString[0]+itemString[1]+itemString[2]).urlEncoding
+        let encodedString = (itemString[0]).urlEncoding
         print(encodedString)
         
         var kakakuURL : URL{
@@ -69,7 +69,7 @@ class ItemRecommendViewController: UIViewController,UIImagePickerControllerDeleg
         
         //楽天市場のネット検索
         var rakutenURL2: URL{
-            return URL(string: "https://search.rakuten.co.jp/search/mall/\(testString1)/")!
+            return URL(string: "https://search.rakuten.co.jp/search/mall/\(encodedString)/")!
         }
         
         
