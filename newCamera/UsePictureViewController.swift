@@ -13,7 +13,7 @@ import Vision
 import SafariServices
 
 class UsePictureViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    let  session = URLSession.shared
+    let session = URLSession.shared
     let imagePicker = UIImagePickerController()
     var getJSON: NSDictionary!
     
@@ -84,6 +84,7 @@ extension UsePictureViewController{
             }else {
                 //Parse the response
                 self.labelResults.text = json.description
+                print(json)
                 let responses: JSON = json["responses"][0]["labelAnnotations"]
                 print(responses)
                 
@@ -99,12 +100,6 @@ extension UsePictureViewController{
                 //遷移先の指定の条件分岐 if文でtextの中のDescriptionのTextという単語が入っているかどうか，if(Textが入っている)
                 if (jsonItemArray.contains("Text")){
                     
-                    //let textRecommend = storyboard.instantiateViewController(withIdentifier: "TextRecommend") as! TextRecommendViewController
-                
-                    //textRecommend.textString = jsonItemArray
-            
-                    //self.navigationController?.pushViewController(textRecommend, animated: true)//遷移先のアニメーション .の後を変更できる
-                    
                     //親クラスと子供クラスのインスタンスを取得
                     let usePicture2 = storyboard.instantiateViewController(withIdentifier: "UsePic2") as! TextRecommendViewController
                     
@@ -118,7 +113,7 @@ extension UsePictureViewController{
                     
                     
                 } else  {
-                    let itemRecommend = storyboard.instantiateViewController(withIdentifier: "ItemRecommend") as! ItemRecommendViewController
+                    let itemRecommend = storyboard.instantiateViewController(withIdentifier: "ItemRecommend") as! ItemTableView
                     
                     itemRecommend.itemString = jsonItemArray
                     print("1")

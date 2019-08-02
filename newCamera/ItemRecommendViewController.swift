@@ -40,13 +40,6 @@ class ItemRecommendViewController: UIViewController,UIImagePickerControllerDeleg
         return URL(string: "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706?format=json&applicationId=\(rakutenAPI_KEY)&keyword=\(itemString[0])&sort=%2BitemPrice")!
     }
     
-   
-    
-    
-    
-    //価格.com のネット検索
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //これが最適解,本当はこれがしたい

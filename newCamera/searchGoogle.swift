@@ -81,7 +81,6 @@ class searchGoogle: UIViewController,WKUIDelegate,UINavigationControllerDelegate
         print(screenShot)
         
         UIGraphicsEndImageContext()
-        UIImageWriteToSavedPhotosAlbum(screenShot, nil, nil, nil)
         
         //遷移先のViewControllerを取得
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

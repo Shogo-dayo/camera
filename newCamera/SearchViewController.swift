@@ -76,28 +76,23 @@ class SearchViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                     }
                 }
                 
-                //5つの単語が返ってくる
-                print(item2)
-                //配列の1番目が抽出
-                print(item2[0])
-                
-                
                 let item3 = item2[0]
                 let item4 = item2[1]
                 let item5 = item2[2]
-                let item6 = item2[3]
+                //let item6 = item2[3]
+                //let item7 = item2[4]
                 
                 
-                print(item3)
+                //URLを英語化する（日本語だと入らない）
+                let urlString: String = "https://scholar.google.co.jp/scholar?hl=ja&as_sdt=0%2C5&q=\(item3)+\(item4)+\(item5)&btnG="
+                let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let scholarURL = URL(string: encodeUrlString)
+                
+                print(scholarURL)
                 
                 
-                
-                var scholarURL : URL{
-                    return URL(string: "https://scholar.google.co.jp/scholar?hl=ja&as_sdt=0%2C5&q=\(item3)+\(item4)+\(item5)&btnG=")!
-                }
-                
-                if UIApplication.shared.canOpenURL(scholarURL){
-                    UIApplication.shared.openURL(scholarURL)
+                if UIApplication.shared.canOpenURL(scholarURL!){
+                    UIApplication.shared.openURL(scholarURL!)
                 }
             }
         }

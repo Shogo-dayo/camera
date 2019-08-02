@@ -146,17 +146,17 @@
 			isa = PBXGroup;
 			children = (
 				CCC1DB8622CE021C000F9DD2 /* AppDelegate.swift */,
+				CCC1DB8A22CE021C000F9DD2 /* Main.storyboard */,
 				CC11C3E122EEE77200C13F5C /* ViewController.swift */,
+				CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */,
 				CCC1DBB422CE0FB8000F9DD2 /* UsePictureViewController.swift */,
-				CC11C3E922EEFDB500C13F5C /* ItemRecommendViewController.swift */,
 				CC11C3EB22EEFDD100C13F5C /* TextRecommendViewController.swift */,
 				CCD3FA1622F135C300C7EE36 /* SearchViewController.swift */,
-				CCD3FA8C22F3DD0500C7EE36 /* searchGoogle.swift */,
 				CCD3FA8E22F4147700C7EE36 /* ItemTableView.swift */,
-				CCC1DB8A22CE021C000F9DD2 /* Main.storyboard */,
 				CCC1DB8D22CE021D000F9DD2 /* Assets.xcassets */,
 				CCC1DB8F22CE021D000F9DD2 /* LaunchScreen.storyboard */,
 				CCC1DB9222CE021D000F9DD2 /* Info.plist */,
+				CC11C3E922EEFDB500C13F5C /* ItemRecommendViewController.swift */,
 			);
 			path = newCamera;
 			sourceTree = "<group>";
