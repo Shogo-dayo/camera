@@ -20,9 +20,7 @@ class UsePictureViewController: UIViewController,UIImagePickerControllerDelegate
     
     @IBOutlet weak var picture: UIImageView!
     
-    @IBOutlet weak var labelResults: UITextView!
-    
-    
+
     var image :UIImage?  = nil
     var googleAPIKey = "AIzaSyD2ox0ih5H0d0st7Ggnvs6jPm5opDYSqQg"
     var googleURL: URL{
@@ -35,7 +33,6 @@ class UsePictureViewController: UIViewController,UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picture.image = self.image
-        labelResults.isHidden = true
         imagePicker.delegate = self
         
     }
@@ -47,7 +44,6 @@ class UsePictureViewController: UIViewController,UIImagePickerControllerDelegate
         picture.contentMode = .scaleAspectFit
         picture.isHidden = true // You could optionally display the image here by setting imageView.image = pickedImage
         
-        labelResults.isHidden = true
         
         // Base64 encode the image and create the request
         let binaryImageData = base64EncodeImage(picture.image!)
@@ -73,17 +69,16 @@ extension UsePictureViewController{
             
             //結果出力の際に，ラベルと画像を出力するか
             self.picture.isHidden = false
-            self.labelResults.isHidden = false
             
             var jsonItemArray: [String] = []
             
             
             //check for errors
             if(errorObj.dictionaryValue != [:]){
-                self.labelResults.text = "Error code \(errorObj["code"]): \(errorObj["message"])"
+                //self.labelResults.text = "Error code \(errorObj["code"]): \(errorObj["message"])"
             }else {
                 //Parse the response
-                self.labelResults.text = json.description
+                
                 print(json)
                 let responses: JSON = json["responses"][0]["labelAnnotations"]
                 print(responses)
@@ -145,7 +140,7 @@ extension UsePictureViewController{
                             labelResultsText += "\(label)"
                         }
                     }
-                    self.labelResults.text = labelResultsText
+                    
                 }
             }
         })

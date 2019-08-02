@@ -26,12 +26,10 @@ class TextRecommendViewController: UIViewController,UIImagePickerControllerDeleg
     
     
     @IBOutlet weak var picture2: UIImageView!
-    @IBOutlet weak var labelResults2: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picture2.image = self.image2
-        labelResults2.isHidden = true
         imagePicker.delegate = self
         
     }
@@ -42,7 +40,6 @@ class TextRecommendViewController: UIViewController,UIImagePickerControllerDeleg
         picture2.contentMode = .scaleAspectFit
         picture2.isHidden = true// You could optionally display the image here by setting imageView.image = pickedImage
         
-        labelResults2.isHidden = true
         
         // Base64 encode the image and create the request
         let binaryImageData2 = base64EncodeImage2(picture2.image!)
@@ -67,11 +64,10 @@ extension TextRecommendViewController{
             
             //結果出力の際に，ラベルと画像を出力するか
             self.picture2.isHidden = false
-            self.labelResults2.isHidden = false
             
             //check for errors
             if(errorObj.dictionaryValue != [:]){
-                self.labelResults2.text = "Error code \(errorObj["code"]): \(errorObj["message"])"
+                //self.labelResults2.text = "Error code \(errorObj["code"]): \(errorObj["message"])"
             }else {
                 //Parse the response
                 let responses: JSON = json["responses"][0]["textAnnotations"]
@@ -82,7 +78,7 @@ extension TextRecommendViewController{
                 //"descriptionをSearchViewControllerに渡す
                 let responses2: JSON = json["responses"][0]["textAnnotations"][0]["description"]
                 
-                self.labelResults2.text = responses2.description
+                
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let searchRecommend = storyboard.instantiateViewController(withIdentifier: "search") as! SearchViewController
@@ -117,7 +113,7 @@ extension TextRecommendViewController{
                             labelResultsText += "\(label)"
                         }
                     }
-                    self.labelResults2.text = labelResultsText
+                    
                 }
             }
         })

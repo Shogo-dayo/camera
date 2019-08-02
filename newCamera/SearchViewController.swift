@@ -26,17 +26,12 @@ struct searchData:Codable {
 
 class SearchViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    
-    
-    @IBOutlet weak var searchView: UITextView!
-    
     var searchString: String = ""
     let session3 = URLSession.shared
     
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.searchView.text = self.searchString.description
         //文字数カウント
         //print(searchString.count)
         getApiRequest()
@@ -60,10 +55,11 @@ class SearchViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         //nullが入る場合は？にする必要がある optional型に
         Alamofire.request(gooUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             if var result = response.result.value as? [String: Any] {
-                self.searchView.text = result.description
+                
                 
                 //Dictionary型をJson型に
                 let searchResult = JSON(result)
+                print(searchResult)
 //
                 //JSON型のkey値取得
                 var item2 : [String] = []
