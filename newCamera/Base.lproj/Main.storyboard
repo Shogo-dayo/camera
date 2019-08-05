@@ -18,38 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2se-F9-kKL">
+                                <rect key="frame" x="0.0" y="64" width="414" height="625"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vM-yO-W2Z">
-                                <rect key="frame" x="0.0" y="666" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="689" width="414" height="47"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="1Qz-Ah-uXw">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="launchCamera:" destination="BYZ-38-t0r" id="JLX-GF-mbN"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="screen" id="TA7-Er-uar">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cYu-qj-vwr"/>
+                                    <barButtonItem title="screen" image="screen" id="TA7-Er-uar">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="prepareScreen:" destination="BYZ-38-t0r" id="n6U-JN-GmZ"/>
                                             <segue destination="S2V-KY-FVF" kind="show" identifier="vc" id="uGc-gQ-uAA"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="play" id="dI2-yl-T99">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="CiP-04-wBB"/>
+                                    <barButtonItem image="gallery" id="dI2-yl-T99">
+                                        <inset key="landscapeImageInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="prepareSetting:" destination="BYZ-38-t0r" id="4oJ-OG-WMW"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2se-F9-kKL">
-                                <rect key="frame" x="0.0" y="64" width="414" height="602"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3vM-yO-W2Z" firstAttribute="top" secondItem="2se-F9-kKL" secondAttribute="bottom" id="0Wx-li-0Ts"/>
                             <constraint firstItem="2se-F9-kKL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wss-g4-amu"/>
                             <constraint firstItem="2se-F9-kKL" firstAttribute="trailing" secondItem="3vM-yO-W2Z" secondAttribute="trailing" id="dbe-z5-mqm"/>
                             <constraint firstItem="2se-F9-kKL" firstAttribute="leading" secondItem="3vM-yO-W2Z" secondAttribute="leading" id="iEC-0B-qvA"/>
                             <constraint firstItem="3vM-yO-W2Z" firstAttribute="top" secondItem="2se-F9-kKL" secondAttribute="bottom" id="nXy-iA-LVN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3vM-yO-W2Z" secondAttribute="bottom" constant="26" id="ruX-kG-ypc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3vM-yO-W2Z" secondAttribute="bottom" id="ruX-kG-ypc"/>
                             <constraint firstItem="2se-F9-kKL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sgb-V1-qLe"/>
                             <constraint firstAttribute="trailing" secondItem="2se-F9-kKL" secondAttribute="trailing" id="yrR-bm-mIu"/>
                         </constraints>
@@ -82,7 +90,9 @@
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="net-clearboxtechnology.M1Gcloudvision" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhd-zO-iSe">
                                 <rect key="frame" x="127" y="668" width="161" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="商品 or 文書"/>
+                                <state key="normal" title="商品 or 文書">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="analyzeButtonTapped:" destination="tje-J1-tfI" eventType="touchUpInside" id="j1D-T0-snr"/>
                                 </connections>
@@ -144,7 +154,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGZ-aX-PMO">
                                 <rect key="frame" x="146" y="668" width="122" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="分析開始"/>
+                                <state key="normal" title="分析開始">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="analyzeButtonTapped2:" destination="dbe-f4-oDX" eventType="touchUpInside" id="3hp-RS-igm"/>
                                 </connections>
@@ -296,6 +308,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gallery" width="35.666667938232422" height="35.666667938232422"/>
+        <image name="screen" width="34" height="47"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rhy-Bb-LCU"/>
     </inferredMetricsTieBreakers>

@@ -49,10 +49,12 @@ class searchGoogle: UIViewController,WKUIDelegate,UINavigationControllerDelegate
         
         //ツールバースタイルの設定
         toolbar.barStyle = .default
-        toolbar.tintColor = UIColor.blue
+        toolbar.tintColor = UIColor.black
+        toolbar.barTintColor = UIColor.white
+        
         
         let screenShot = UIButton(frame: CGRect(x:0 , y:0 , width: 50 , height: 24))
-        //screenShot.setBackgroundImage(UIImage(named: "screen"), for: .normal)
+        //screenShot.setBackgroundImage(UIImage(named: "screen"), for:UIControl.State())
         screenShot.addTarget(self, action: #selector(self.getScreenShot(_ :)), for: .touchUpInside)
         let screen = UIBarButtonItem(customView: screenShot)
         

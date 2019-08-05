@@ -53,6 +53,8 @@ class ItemTableView: UIViewController, UITableViewDelegate,UITableViewDataSource
         let encodedString2 = (itemString[2]).urlEncoding
         print(encodedString)
         
+        
+        
         switch indexPath.row {
         case 0:
             var rakutenURL: URL{
